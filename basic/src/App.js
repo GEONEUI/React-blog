@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import { useState } from 'react';
+import axios from 'axios';
 
 
 function App() {
@@ -10,6 +11,10 @@ function App() {
 
 	const onSubmit = () => {
 		console.log(title, body);
+		axios.post("http://localhost:3001/posts", {
+			title,
+			body
+		});
 	}
 
 	return (
