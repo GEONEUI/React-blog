@@ -25,7 +25,11 @@ const Listpage = () => {
 			<h1>List contents</h1>
 			{post.map((item) => {
 				return (
-					<div>{item.title}</div>
+					<div class="card" key={item.title}>
+						<div class="card-body">
+							{item.title}
+						</div>
+					</div>
 				);
 			})}</div>
 	);

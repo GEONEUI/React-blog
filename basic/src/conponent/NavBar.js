@@ -1,26 +1,22 @@
-import {
-	Link,
-	NavLink
-}
-	from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
 	return (
-		<nav className="navbar navbar-dark bg-dark">
-			<div className="container">
-				<Link className="navbar-brand" to="/">Home</Link>
-				<ul className="navbar-nav">
-					<li className="nav-item">
-						<NavLink
-							activeClassName='active'
-							className="nav-link"
-							aria-current="page"
-							to="/blogs">Blogs
-						</NavLink>
-					</li>
-				</ul>
-			</div>
-		</nav>
+
+
+		<>
+			<ul class="nav justify-content-end">
+				<li class="nav-item">
+					<Link class="nav-link active text-black" aria-current="page" to="/">Home</Link>
+				</li>
+				<li class="nav-item">
+					<Link class="nav-link active text-black" aria-current="page" to="/Blogs">Blogs</Link>
+				</li>
+			</ul>
+		</>
+
+
+
 	);
 }
 
