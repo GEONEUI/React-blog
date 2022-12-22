@@ -4,12 +4,12 @@ import Card from "../conponent/Card";
 
 const Listpage = () => {
 
-	const [post, setPost] = useState([]);
+	const [posts, setPosts] = useState([]);
 
 	const getPost = () => {
 
 		axios.get("http://localhost:3001/posts").then((res) => {
-			setPost(res.data);
+			setPosts(res.data);
 		})
 
 	}
@@ -24,9 +24,11 @@ const Listpage = () => {
 	return (
 		<div>
 			<h1>Blogs</h1>
-			{post.map((item) => {
+			{posts.map((post) => {
 				return (
-					<Card item={item} key={item.title} />
+					<Card post={post} key={post.title} >
+						<div>button</div>
+					</Card>
 				);
 			})}</div >
 	);
