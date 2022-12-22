@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Card from "../conponent/Card";
 
 const Listpage = () => {
 
@@ -22,16 +23,12 @@ const Listpage = () => {
 
 	return (
 		<div>
-			<h1>List contents</h1>
+			<h1>Blogs</h1>
 			{post.map((item) => {
 				return (
-					<div class="card" key={item.title}>
-						<div class="card-body">
-							{item.title}
-						</div>
-					</div>
+					<Card item={item} key={item.title} />
 				);
-			})}</div>
+			})}</div >
 	);
 }
 
