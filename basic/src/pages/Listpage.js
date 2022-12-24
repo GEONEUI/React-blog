@@ -2,10 +2,11 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Card from "../conponent/Card";
 import { Link } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 
 const Listpage = () => {
-
+	const history = useHistory();
 	const [posts, setPosts] = useState([]);
 
 	const getPost = () => {
@@ -23,6 +24,9 @@ const Listpage = () => {
 
 
 
+
+
+
 	return (
 		<div>
 			<div className="d-flex justify-content-between align-items-center mb-3">
@@ -31,7 +35,10 @@ const Listpage = () => {
 			</div>
 			{posts.map((post) => {
 				return (
-					<Card title={post.title} key={post.id} >
+					<Card
+						title={post.title}
+						key={post.id}
+						onClick={() => { history.push('/blogs/EditPage') }}>
 						<div>button</div>
 					</Card>
 				);
